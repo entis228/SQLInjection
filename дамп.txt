@@ -1,0 +1,11 @@
+(Дамп основной базы вводите в phpmyadmin) 
+CREATE DATABASE sqlinjectionres;
+CREATE TABLE settings (id INTEGER PRIMARY KEY AUTO_INCREMENT,dbname VARCHAR(20), sqlquery TEXT);
+INSERT INTO settings (dbname, sqlquery) VALUES ('sqlinjection','SELECT * FROM');
+CREATE TABLE version (id INTEGER PRIMARY KEY AUTO_INCREMENT, request TEXT);
+INSERT INTO version (request) VALUES ('CREATE DATABASE sqlinjection');
+(Опционально Дамп тестовой базы вводите на странице настроек, желательно по одному запросу)
+CREATE DATABASE sqlinjection; -- этот запрос вводится один раз при начальном создании. Дальше база будет сама удаляться и пересоздаваться с другим именем
+CREATE TABLE city (id INTEGER PRIMARY KEY AUTO_INCREMENT, name varchar(30), country integer, population integer);
+INSERT INTO city (name, country, population) VALUES ('Kharkov', 1, 1443000),('Kyiv', 1, 3703100), ('Minsk', 3, 2545500),('Odessa', 1,1017699),('Voronezh', 2, 1058261),('Kishinev', 4, 695400);
+INSERT INTO city (name, country, population) VALUES ('MLT', 1, 1443000),('ZP', 1, 3703100);
