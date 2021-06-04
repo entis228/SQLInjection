@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL инъекции</title>
+</head>
+<body>
+    <a href="settings.html">Настройки</a>
+    <hr>
+    <div id="injection"></div>
+    <select id="stInj" onchange="fillParams()">
+        <option>Заполнить параметры по вид инъекции</option>
+        <option value="1">Сведение к истине</option>
+        <option value="2">Объединение запроса</option>
+        <option value="3">Расщепление запроса</option>
+    </select>
+    <input type="button" value="Отправить" onclick="sendInjection()">
+    <div id="result"></div>
+    
+    <p>Версии базы данных для сравнения</p>
+    <div id="combos"></div>
+    <div id="table0"></div>
+    <hr>
+    <div id="table1"></div>
+    <p>При нажатии на кнопку откат, база вернется в состояние, указаное в первом выпадающем списке</p>
+    <input type="button" value="Откат" onclick="Return()">
+<script src="script.js"></script>
+<script>loadInfo();</script>
+</body>
+</html>

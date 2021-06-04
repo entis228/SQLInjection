@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки</title>
+</head>
+<body>
+    <a href="index.html">На главную</a><hr>
+    <p>Название базы данных, которую будете использовать для SQL инъекций (при изменении все версии удаляются вместе с предыдущей базой данных)</p>
+    <input type="text" id="dbname" onchange="setDBName()">
+    <p>SQL консоль для создания или изменения базы данных (запросы на выборку не пишите, база данных уже создана, <br>пишите и заполняйте таблицы, не используйте нижнее подчеркивание "_")</p>
+    <input type="text" id="exec">
+    <input type="button" value="Отправить" onclick="sendReserve()">
+    <div id="result"></div>
+    <p>SQL запрос, который будет использован на таблице:</p>
+    <input type="text" id="quer" onchange="setQuery()">
+    <br>
+    Пользовательский ввод в запросе отмечайте %s, вместо символа = используйте /
+    <script src="script.js"></script>
+    <script id="set"></script>
+</body>
+</html>
